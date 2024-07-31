@@ -36,6 +36,7 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -95,9 +96,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID1" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+    <FlowDecision x:Name="__ReferenceID3" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <FlowDecision.Condition>
         <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="IsManualExecution = True" />
       </FlowDecision.Condition>
@@ -106,7 +107,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">270,130</av:Point>
           <av:Size x:Key="ShapeSize">60,60</av:Size>
-          <av:PointCollection x:Key="TrueConnector">270,160 240,160 240,160.2 145.4,160.2</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">270,160 270,160.2 145.4,160.2</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
@@ -115,6 +116,7 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">35,125</av:Point>
               <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">90.2,195.4 90.2,225.4 90,225.4 90,250</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PopUpActivity - Invoke Workflow File (PopUpActivity.xaml)" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PopUpActivity.xaml">
@@ -127,9 +129,43 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
+          <FlowStep.Next>
+            <FlowSwitch x:TypeArguments="x:Int32" x:Name="__ReferenceID1" DisplayName="Flow Switch" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
+              <FlowSwitch.Default>
+                <FlowStep x:Name="__ReferenceID2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">245,245</av:Point>
+                      <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DefaultSelection - Invoke Workflow File (DefaultSelection.xaml)" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="DefaultSelection.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                </FlowStep>
+              </FlowSwitch.Default>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <av:Point x:Key="ShapeLocation">60,250</av:Point>
+                  <av:Size x:Key="ShapeSize">60,60</av:Size>
+                  <av:PointCollection x:Key="Default">120,280 120,280.2 245,280.2</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </FlowSwitch>
+          </FlowStep.Next>
         </FlowStep>
       </FlowDecision.True>
     </FlowDecision>
     <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
   </Flowchart>
 </Activity>
