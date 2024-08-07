@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="MonitoringPrices" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="842.4,1409.6" sap2010:WorkflowViewState.IdRef="MonitoringPrices_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="MonitoringPrices" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="842.4,2184.8" sap2010:WorkflowViewState.IdRef="MonitoringPrices_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -41,6 +41,10 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Platform.SyncObjects</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -105,42 +109,58 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MonitoringPrices" sap:VirtualizedContainerService.HintSize="608,1344.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MonitoringPrices" sap:VirtualizedContainerService.HintSize="688,2120" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtURLs" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtNewInfo" />
+      <Variable x:TypeArguments="x:Int32" Name="newRow" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtData" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - Reading URLs" sap:VirtualizedContainerService.HintSize="545.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Reading the URL's registered.&quot;]" />
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="This activity reads the URL sheet info from Monitoring.xlsx" DataTable="[dtURLs]" DisplayName="Read Range Workbook - URLs" sap:VirtualizedContainerService.HintSize="545.6,164" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="URL" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsx&quot;]">
+    <ui:LogMessage DisplayName="Log Message - Reading URLs" sap:VirtualizedContainerService.HintSize="625.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Reading the URL's registered.&quot;]" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="This activity reads the URL sheet info from Monitoring.xlsx" DataTable="[dtURLs]" DisplayName="Read Range Workbook - URLs" sap:VirtualizedContainerService.HintSize="625.6,164" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="URL" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsx&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadRange>
-    <ui:BuildDataTable sap2010:Annotation.AnnotationText="This datatable will record the new information gather from web site." DataTable="[dtNewInfo]" DisplayName="Build Data Table - dtNewInfo" sap:VirtualizedContainerService.HintSize="545.6,136" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Original_x0020_Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price_x0020_with_x0020_Discount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Discount_x0020__x0025_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+    <ui:BuildDataTable sap2010:Annotation.AnnotationText="This datatable will record the new information gather from web site." DataTable="[dtNewInfo]" DisplayName="Build Data Table - dtNewInfo" sap:VirtualizedContainerService.HintSize="625.6,136" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Original_x0020_Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price_x0020_with_x0020_Discount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Discount_x0020__x0025_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BuildDataTable>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtURLs]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="545.6,781.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtURLs]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="625.6,1184" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,592.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,986.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="dynamicURL" />
+              <Variable x:TypeArguments="x:String" Name="sDiscountPrice" />
+              <Variable x:TypeArguments="x:String" Name="sOriginalPrice" />
+              <Variable x:TypeArguments="x:String" Name="sDiscountPercentage" />
+              <Variable x:TypeArguments="x:String" Name="sTitle" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -160,28 +180,260 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Mercado Libre México - Envíos Gratis en el día" sap:VirtualizedContainerService.HintSize="449.6,346.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="2a486409-048d-4497-bd84-6302299b801e" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Mercado Libre México - Envíos Gratis en el día" sap:VirtualizedContainerService.HintSize="449.6,740" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="2a486409-048d-4497-bd84-6302299b801e" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,106.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,500" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <ui:MultipleAssign DisplayName="Multiple Assign - Clean up variables value" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[sTitle]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[sDiscountPercentage]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[sOriginalPrice]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[sDiscountPrice]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:MultipleAssign>
+                    <uix:NGetText DisplayName="Get Text - Titulo" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="2a486409-048d-4497-bd84-6302299b801e" TextString="[sTitle]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://articulo.mercadolibre.com.mx/MLM-1430080629-arrancador-de-retroceso-echo-es-250-pb-250-pb250ln-pb-_JM#polycard_client=recommendations_home_fourth-best-navigation-trend-recommendations&amp;reco_backend=machinalis-homes-univb&amp;reco_client=home_fourth-best-navigation-trend-recommendations&amp;reco_item_pos=1&amp;reco_backend_type=function&amp;reco_id=99f64399-561c-4c1a-bdd4-ee49087e23ed&amp;c_id=/home/fourth-best-navigation-trend-recommendations/element&amp;c_uid=7fe44801-7199-4330-8ec9-4e9c4589b59a" DesignTimeRectangle="1266, 430, 399, 107" DesignTimeScaleFactor="1.375" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='ui-pdp-title' /&gt;" Guid="d1f1c0d8-1be8-425a-953d-a41c38cc2c8a" ImageBase64="" InformativeScreenshot="0d5a04359c678d1e89fad80fa14694a2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Arrancador De Retroceso Echo Es-250 Pb-250 Pb250ln Pb | Meses sin interés' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NGetText>
+                    <uix:NGetText DisplayName="Get Text '7% OFF'" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="2a486409-048d-4497-bd84-6302299b801e" TextString="[sDiscountPercentage]" Timeout="5" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://articulo.mercadolibre.com.mx/MLM-3235474514-partsrun-pb250-coil-id-c-bota-aa-para-echo-es-250-pb250-_JM#position%3D6%26search_layout%3Dgrid%26type%3Ditem%26tracking_id%3D8df9c07e-e46e-4bf7-90f4-b91ebe6b304e" CVScreenId="9f96c6c3-9d52-4f7e-883c-bb86bcad70ef" CvTextArea="1335, 519, 71, 17" CvType="AnyWordGroup" DesignTimeRectangle="1337, 514, 68, 28" DesignTimeScaleFactor="1.125" ElementType="Text" FullSelectorArgument="&lt;webctrl class='andes-money-amount__discount' parentid='*' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='andes-money-amount__discount' parentid='price' tag='SPAN' type='' /&gt;" Guid="1e872115-dc48-40e9-9870-2eaf109de9e3" ImageBase64="" InformativeScreenshot="f316a7eb286d0f02c7271b580bf45462.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Partsrun Pb250 Coil Id C + Bota Aa Para Echo Es-250 Pb250... | Meses sin interés' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NGetText>
+                    <If Condition="[Not String.IsNullOrEmpty(sDiscountPercentage)]" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="If_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,467.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,270.4" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <TryCatch.Try>
+                              <uix:NGetText DisplayName="Get Text - Discount Price" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="2a486409-048d-4497-bd84-6302299b801e" TextString="[sDiscountPrice]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://articulo.mercadolibre.com.mx/MLM-3235474514-partsrun-pb250-coil-id-c-bota-aa-para-echo-es-250-pb250-_JM#position%3D6%26search_layout%3Dgrid%26type%3Ditem%26tracking_id%3D8df9c07e-e46e-4bf7-90f4-b91ebe6b304e" CVScreenId="ac96336d-64b8-4043-940a-3712150bd87d" CvTextArea="1204, 507, 125, 41" CvType="AnyWordGroup" DesignTimeRectangle="1204, 507, 126, 41" DesignTimeScaleFactor="1.125" FullSelectorArgument="&lt;webctrl aria-role='img' tag='SPAN' class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact' parentclass='ui-pdp-price__second-line' parentid='price' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='img' tag='SPAN' class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact' parentclass='ui-pdp-price__second-line' parentid='price' type='' aaname='' /&gt;" Guid="41b746b3-cb0c-4960-a20f-089fe582ba89" ImageBase64="" InformativeScreenshot="652c6273061ef73eb323849da21668fe.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Partsrun Pb250 Coil Id C + Bota Aa Para Echo Es-250 Pb250... | Meses sin interés' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="ac96336d-64b8-4043-940a-3712150bd87d" CvTextArea="1335, 519, 71, 17" CvTextArgument="7% OFF" CvType="Text" DesignTimeRectangle="1337, 514, 68, 28" ElementType="Text" FullSelectorArgument="&lt;webctrl class='andes-money-amount__discount' parentid='price' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='andes-money-amount__discount' parentid='price' tag='SPAN' type='' aaname='*' /&gt;" Guid="98c7671a-19b5-4569-8807-093dc438c1de" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,106.4" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,76" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <TryCatch.Try>
+                              <uix:NGetText DisplayName="Get Text - Original Price" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="2a486409-048d-4497-bd84-6302299b801e" TextString="[sOriginalPrice]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://articulo.mercadolibre.com.mx/MLM-3235474514-partsrun-pb250-coil-id-c-bota-aa-para-echo-es-250-pb250-_JM#position%3D6%26search_layout%3Dgrid%26type%3Ditem%26tracking_id%3D8df9c07e-e46e-4bf7-90f4-b91ebe6b304e" CVScreenId="abd6bd90-2883-46f2-8ac1-c5cb8481fa4a" CvTextArea="991, 517, 110, 36" CvType="AnyWordGroup" DesignTimeRectangle="973, 516, 127, 40" DesignTimeScaleFactor="2.5" FullSelectorArgument="&lt;webctrl tag='S' class='andes-money-amount ui-pdp-price__part ui-pdp-price__original-value andes-money-amount--previous andes-money-amount--cents-superscript andes-money-amount--compact' parentclass='ui-pdp-price__main-container' parentid='price' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='S' class='andes-money-amount ui-pdp-price__part ui-pdp-price__original-value andes-money-amount--previous andes-money-amount--cents-superscript andes-money-amount--compact' parentclass='ui-pdp-price__main-container' parentid='price' type='' aaname='' /&gt;" Guid="062c7421-7372-411c-8924-a236389fdcd6" ImageBase64="" InformativeScreenshot="6f85424be8520323b9e69443847f1279.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Partsrun Pb250 Coil Id C + Bota Aa Para Echo Es-250 Pb250... | Meses sin interés' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,164.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="353.6,76" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <TryCatch.Try>
+                              <uix:NGetText DisplayName="Get Text - Original Price" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="2a486409-048d-4497-bd84-6302299b801e" TextString="[sOriginalPrice]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://articulo.mercadolibre.com.mx/MLM-1430080629-arrancador-de-retroceso-echo-es-250-pb-250-pb250ln-pb-_JM#polycard_client=recommendations_home_fourth-best-navigation-trend-recommendations&amp;reco_backend=machinalis-homes-univb&amp;reco_client=home_fourth-best-navigation-trend-recommendations&amp;reco_item_pos=1&amp;reco_backend_type=function&amp;reco_id=99f64399-561c-4c1a-bdd4-ee49087e23ed&amp;c_id=/home/fourth-best-navigation-trend-recommendations/element&amp;c_uid=7fe44801-7199-4330-8ec9-4e9c4589b59a" CVScreenId="8c5915a3-a449-43b3-9d8b-8c49cc690a02" CvTextArea="1264, 557, 154, 51" CvType="AnyWordGroup" DesignTimeRectangle="1264, 559, 155, 50" DesignTimeScaleFactor="1.375" FullSelectorArgument="&lt;webctrl aria-role='img' tag='SPAN' class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact' parentid='price' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='img' tag='SPAN' class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact' parentid='price' type='' aaname='' /&gt;" Guid="4225ccdb-2cda-4da8-b5c0-2ecb6627d6f5" ImageBase64="" InformativeScreenshot="e83817a0d27b562b9e46de488a244a40.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Arrancador De Retroceso Echo Es-250 Pb-250 Pb250ln Pb | Meses sin interés' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(0).ToString, sTitle, sOriginalPrice, sDiscountPrice, sDiscountPercentage, Today.ToString}]" DataTable="[dtNewInfo]" DisplayName="Add Data Row - NewInfo Datatable" sap:VirtualizedContainerService.HintSize="353.6,49.6" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:AddDataRow>
                   </Sequence>
                 </ActivityAction>
               </uix:NApplicationCard.Body>
               <uix:NApplicationCard.TargetApp>
                 <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Edge" IconBase64="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" InformativeScreenshot="709aba654b54e03d17d62a2768fb191c.jpg" Selector="&lt;html app='msedge.exe' title='Mercado Libre México - *' /&gt;" Title="Mercado Libre México - Envíos Gratis en el día" Url="[dynamicURL]" />
               </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NApplicationCard>
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="625.6,120" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Data" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsx&quot;]" />
+    <Assign DisplayName="Assign - New Row" sap:VirtualizedContainerService.HintSize="625.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[newRow]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[dtData.Rows.Cast(Of DataRow).ToList().FindLastIndex(Function(row) row.ItemArray.Any(Function(cell) Not String.IsNullOrEmpty(cell.ToString()))) + 3]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <ui:WriteRange AddHeaders="False" DataTable="[dtNewInfo]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="625.6,139.2" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Data" StartingCell="[&quot;A&quot;+newRow.ToString]" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsx&quot;]" />
   </Sequence>
 </Activity>
