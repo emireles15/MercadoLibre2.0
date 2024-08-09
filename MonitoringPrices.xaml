@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="MonitoringPrices" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1616,2569.6" sap2010:WorkflowViewState.IdRef="MonitoringPrices_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="MonitoringPrices" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1616,2585.6" sap2010:WorkflowViewState.IdRef="MonitoringPrices_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -111,7 +111,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MonitoringPrices" sap:VirtualizedContainerService.HintSize="1626.4,2504.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MonitoringPrices" sap:VirtualizedContainerService.HintSize="1626.4,2520.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtURLs" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtNewInfo" />
@@ -142,13 +142,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BuildDataTable>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtURLs]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1564,1568.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtURLs]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1564,1584.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1530.4,1371.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1530.4,1387.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="dynamicURL" />
             </Sequence.Variables>
@@ -209,7 +209,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
-            <Assign sap2010:Annotation.AnnotationText="This activity gets the URL of the processing row to a variable that is used in the next activity." DisplayName="Assign - Get URL string for each row" sap:VirtualizedContainerService.HintSize="1468,144.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap2010:Annotation.AnnotationText="This activity gets the URL of the processing row to a variable that is used in the next activity." DisplayName="Assign - Get URL string for each row" sap:VirtualizedContainerService.HintSize="1468,160.8" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[dynamicURL]</OutArgument>
               </Assign.To>
@@ -255,9 +255,6 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <PickBranch sap:VirtualizedContainerService.HintSize="424,481.6" sap2010:WorkflowViewState.IdRef="PickBranch_1">
-                        <PickBranch.Variables>
-                          <Variable x:TypeArguments="x:String" Name="sOriginalPrice" />
-                        </PickBranch.Variables>
                         <PickBranch.Trigger>
                           <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Price selector" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                             <ui:WaitUiElementAppear.Target>
@@ -285,7 +282,7 @@
                         <PickBranch.Trigger>
                           <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Main container selector" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
                             <ui:WaitUiElementAppear.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b0aa299d-29a5-4340-a871-44281aa3d41b" InformativeScreenshot="a390a36d573c04d8c3f073cc6e983251" Selector="&lt;html app='msedge.exe' title='Samsung Galaxy S24 Ultra 5G Dual SIM 512 GB negro titanio 12 GB RAM | Meses sin interés' /&gt;&lt;webctrl class='andes-money-amount__discount' parentid='ui-pdp-main-container' tag='SPAN' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b0aa299d-29a5-4340-a871-44281aa3d41b" InformativeScreenshot="a390a36d573c04d8c3f073cc6e983251" Selector="&lt;html app='msedge.exe' title='*' /&gt;&lt;webctrl class='andes-money-amount__discount' parentid='ui-pdp-main-container' tag='SPAN' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
