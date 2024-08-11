@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="MonitoringPrices" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1616,2585.6" sap2010:WorkflowViewState.IdRef="MonitoringPrices_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="MonitoringPrices" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1616,2720.8" sap2010:WorkflowViewState.IdRef="MonitoringPrices_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -109,9 +109,12 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MonitoringPrices" sap:VirtualizedContainerService.HintSize="1626.4,2520.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MonitoringPrices" sap:VirtualizedContainerService.HintSize="1626.4,2656" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtURLs" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtNewInfo" />
@@ -142,13 +145,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BuildDataTable>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtURLs]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1564,1584.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtURLs]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1564,1720" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1530.4,1387.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1530.4,1522.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="dynamicURL" />
             </Sequence.Variables>
@@ -224,13 +227,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Mercado Libre México - Envíos Gratis en el día" sap:VirtualizedContainerService.HintSize="1468,1052.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="2a486409-048d-4497-bd84-6302299b801e" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Mercado Libre México - Envíos Gratis en el día" sap:VirtualizedContainerService.HintSize="1468,1188" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="2a486409-048d-4497-bd84-6302299b801e" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1434.4,812.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1434.4,948" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -316,10 +319,10 @@
                         </ui:InvokeWorkflowFile>
                       </PickBranch>
                     </Pick>
-                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(0).ToString, sTitle, sOriginalPrice, sDiscountPrice, sDiscountPercentage, Today.ToString}]" DataTable="[dtNewInfo]" DisplayName="Add Data Row - to new info" sap:VirtualizedContainerService.HintSize="1372,77.6" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(0).ToString, sTitle, sOriginalPrice, sDiscountPrice, sDiscountPercentage, Now.ToString}]" DataTable="[dtNewInfo]" DisplayName="Add Data Row - to new info" sap:VirtualizedContainerService.HintSize="1372,212.8" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
