@@ -301,7 +301,7 @@ table, th, td{
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String" xml:space="preserve">["Hello, This is the Mercado Libre items Monitoring. &lt;br&gt;"+ 
-"There is a total of " + RowsCount.ToString() + " items that were found with discount. Please refer to the following: &lt;br&gt;"]</InArgument>
+"There is a total of " + RowsCount.ToString() + " item/s that was/were found with discount. Please refer to the following: &lt;br&gt;"]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
