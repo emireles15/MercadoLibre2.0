@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>842.4,646.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1138.4,646.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PopUpActivity_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -91,7 +91,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - Process started" sap:VirtualizedContainerService.HintSize="353.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Asking for Users selection to proceed with automation&quot;]" />
-    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog - Users Selection" sap:VirtualizedContainerService.HintSize="353.6,318.4" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Select the activity to perform today" OptionsString="Add item;Monitor current items" Title="Mercado Libre Monitoring">
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog - Users Selection" sap:VirtualizedContainerService.HintSize="353.6,318.4" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Select the activity to perform today" OptionsString="Add item;Monitor current items;Remove URL" Title="Mercado Libre Monitoring">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[out_Selection]</OutArgument>
       </ui:InputDialog.Result>

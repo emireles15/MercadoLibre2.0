@@ -1,0 +1,5 @@
+Sub ClearRemovedDataSheetContent()
+    Dim ws4 As Worksheet
+    Set ws4 = ThisWorkbook.Sheets("Removed Data")
+    ws4.Cells.Clear
+End Sub

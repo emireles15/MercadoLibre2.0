@@ -1,0 +1,5 @@
+Sub ClearURLSheetContent()
+    Dim ws1 As Worksheet
+    Set ws1 = ThisWorkbook.Sheets("URL")
+    ws1.Cells.Clear
+End Sub

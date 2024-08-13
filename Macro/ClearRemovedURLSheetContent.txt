@@ -1,0 +1,5 @@
+Sub ClearRemovedURLSheetContent()
+    Dim ws2 As Worksheet
+    Set ws2 = ThisWorkbook.Sheets("Removed URL")
+    ws2.Cells.Clear
+End Sub

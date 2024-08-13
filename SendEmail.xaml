@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>842.4,1624</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>842.4,1428</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -113,15 +113,11 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="540.8,1559.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="540.8,1363.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Data" />
       <Variable x:TypeArguments="x:Int32" Name="RowsCount" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="Emails">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(of String)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of String)]" Name="Emails" />
       <Variable x:TypeArguments="x:String" Name="Header" />
       <Variable x:TypeArguments="x:String" Name="Footer" />
       <Variable x:TypeArguments="x:String" Name="InicialMessage" />
@@ -134,8 +130,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Data]" DisplayName="Read Range Workbook - Data SpreadSheet" sap:VirtualizedContainerService.HintSize="478.4,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Data" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsx&quot;]" />
-    <ui:FilterDataTable DataTable="[dt_Data]" DisplayName="Filter Data Table - by Transaction Code" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="478.4,84.8" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_Data]" SelectColumnsMode="Remove">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Data]" DisplayName="Read Range Workbook - Data SpreadSheet" sap:VirtualizedContainerService.HintSize="478.4,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Data" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsm&quot;]" />
+    <ui:FilterDataTable DataTable="[dt_Data]" DisplayName="Filter Data Table - by Transaction Code" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_Data]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -160,7 +156,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <ui:FilterDataTable DataTable="[dt_Data]" DisplayName="Filter Data Table - Discount Column not empty" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="478.4,84.8" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_Data]" SelectColumnsMode="Remove">
+    <ui:FilterDataTable DataTable="[dt_Data]" DisplayName="Filter Data Table - Discount Column not empty" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_Data]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
@@ -182,7 +178,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <Assign DisplayName="Assign - RowsCount" sap:VirtualizedContainerService.HintSize="478.4,84.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign - RowsCount" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[RowsCount]</OutArgument>
       </Assign.To>
@@ -196,7 +192,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[Emails]" DisplayName="Append Items to Collection - Emails" sap:VirtualizedContainerService.HintSize="478.4,84.8" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_1">
+    <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[Emails]" DisplayName="Append Items to Collection - Emails" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_1">
       <uasc:AppendItemToCollection.Items>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">erickmireleshdz@hotmail.com</InArgument>
@@ -209,7 +205,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uasc:AppendItemToCollection>
-    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date" DataTable="[dt_Data]" DisplayName="Remove Data Column - Date" sap:VirtualizedContainerService.HintSize="478.4,84.8" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date" DataTable="[dt_Data]" DisplayName="Remove Data Column - Date" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -217,7 +213,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RemoveDataColumn>
-    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Transaction Code" DataTable="[dt_Data]" DisplayName="Remove Data Column - TransactionCode" sap:VirtualizedContainerService.HintSize="478.4,84.8" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2">
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Transaction Code" DataTable="[dt_Data]" DisplayName="Remove Data Column - TransactionCode" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -225,7 +221,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RemoveDataColumn>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Data]" DisplayName="For Each Row in Data Table - Add value to variable &quot;Body&quot;" sap:VirtualizedContainerService.HintSize="478.4,84.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Data]" DisplayName="For Each Row in Data Table - Add value to variable &quot;Body&quot;" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>

@@ -1,0 +1,5 @@
+Sub ClearDataSheetContent()
+    Dim ws3 As Worksheet
+    Set ws3 = ThisWorkbook.Sheets("Data")
+    ws3.Cells.Clear
+End Sub
