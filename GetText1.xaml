@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>842.4,1253.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>842.4,1281.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetText1_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,13 +110,13 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetText1" sap:VirtualizedContainerService.HintSize="512,1188.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetText1" sap:VirtualizedContainerService.HintSize="512,1216.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign - Clean up value of arguments" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign - Clean up value of arguments" sap:VirtualizedContainerService.HintSize="449.6,84.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -125,7 +125,10 @@
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">
-                <Literal x:TypeArguments="x:String" Value="" />
+                <Literal x:TypeArguments="x:String">
+                  <Literal.Result>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </Literal.Result></Literal>
               </InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
@@ -135,7 +138,10 @@
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">
-                <Literal x:TypeArguments="x:String" Value="" />
+                <Literal x:TypeArguments="x:String">
+                  <Literal.Result>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </Literal.Result></Literal>
               </InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
@@ -145,7 +151,10 @@
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">
-                <Literal x:TypeArguments="x:String" Value="" />
+                <Literal x:TypeArguments="x:String">
+                  <Literal.Result>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </Literal.Result></Literal>
               </InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
@@ -158,7 +167,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Mercado Libre México - Envíos Gratis en el día" sap:VirtualizedContainerService.HintSize="449.6,995.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="10e17aef-45fd-4efb-9cf3-2f0855160b26" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Use Browser Edge: Mercado Libre México - Envíos Gratis en el día" sap:VirtualizedContainerService.HintSize="449.6,995.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="Never" OutUiElement="{x:Null}" ScopeGuid="10e17aef-45fd-4efb-9cf3-2f0855160b26" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -170,12 +179,12 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGetText DisplayName="Get Text - Discount Percentage" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="10e17aef-45fd-4efb-9cf3-2f0855160b26" TextString="[out_DiscountPercentage]" Version="V3">
+            <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Text - Discount Percentage" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NGetText_6" OutUiElement="{x:Null}" ScopeIdentifier="10e17aef-45fd-4efb-9cf3-2f0855160b26" ScrapingOptions="{x:Null}" TextString="[out_DiscountPercentage]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
               <uix:NGetText.Target>
-                <uix:TargetAnchorable BrowserURL="https://www.mercadolibre.com.mx/samsung-galaxy-s24-plus-5g-dual-sim-512-gb-violeta-12-gb-ram/p/MLM29701228#polycard_client=recommendations_home_navigation-recommendations&amp;reco_backend=machinalis-homes-univb&amp;wid=MLM2849255502&amp;reco_client=home_navigation-recommendations&amp;reco_item_pos=4&amp;reco_backend_type=function&amp;reco_id=043910a5-f1a1-4df5-aeb0-bea6f90e0c4f&amp;sid=recos&amp;c_id=/home/navigation-recommendations/element&amp;c_uid=136f6fe3-8206-487c-88ed-7f27b6110b3d" CVScreenId="058df3b2-10b4-4dde-99cb-5dff4c85d62b" CvTextArea="1325, 519, 71, 17" CvType="AnyWordGroup" DesignTimeRectangle="1327, 514, 68, 28" DesignTimeScaleFactor="1.125" ElementType="Text" FullSelectorArgument="&lt;webctrl class='andes-money-amount__discount' parentid='price' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='andes-money-amount__discount' parentid='price' tag='SPAN' type='' /&gt;" Guid="f2791eea-4308-419b-abbf-4ff03c39b998" ImageBase64="" InformativeScreenshot="2b11d166d76eda7587c60bc894f29915.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable BrowserURL="https://www.youtube.com/" CVScreenId="65a302ba-61af-4576-814e-9a9882cffc86" CvTextArea="1357, 519, 72, 17" CvType="AnyWordGroup" DesignTimeRectangle="1359, 514, 68, 28" DesignTimeScaleFactor="1.125" ElementType="Text" FullSelectorArgument="&lt;webctrl class='andes-money-amount__discount' parentid='price' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='andes-money-amount__discount' parentid='price' tag='SPAN' type='' /&gt;" Guid="ccda7c8c-14f9-455d-ab93-31db87b55a24" ImageBase64="" InformativeScreenshot="99630068d5bb24aca9306a8feff3eed9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NGetText.Target>
             </uix:NGetText>
-            <uix:NGetText DisplayName="Get Text - Original Price" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="10e17aef-45fd-4efb-9cf3-2f0855160b26" TextString="[out_OriginalPrice]" Version="V3">
+            <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Text - Original Price" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NGetText_3" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="10e17aef-45fd-4efb-9cf3-2f0855160b26" ScrapingOptions="{x:Null}" TextString="[out_OriginalPrice]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://articulo.mercadolibre.com.mx/MLM-3235474514-partsrun-pb250-coil-id-c-bota-aa-para-echo-es-250-pb250-_JM#position%3D6%26search_layout%3Dgrid%26type%3Ditem%26tracking_id%3D8df9c07e-e46e-4bf7-90f4-b91ebe6b304e" DesignTimeRectangle="1193, 523, 91, 30" DesignTimeScaleFactor="1.875" FullSelectorArgument="&lt;webctrl tag='S' aria-role='img' class='andes-money-amount ui-pdp-price__part ui-pdp-price__original-value andes-money-amount--previous andes-money-amount--cents-superscript andes-money-amount--compact' parentid='price' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='S' aria-role='img' class='andes-money-amount ui-pdp-price__part ui-pdp-price__original-value andes-money-amount--previous andes-money-amount--cents-superscript andes-money-amount--compact' parentid='price' type='' aaname='' /&gt;" Guid="d419996e-3dca-4a2b-acbf-6c0b8d5dac0a" ImageBase64="" InformativeScreenshot="034dda9e1bc6ca0109750c3a492295f4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Partsrun Pb250 Coil Id C + Bota Aa Para Echo Es-250 Pb250... | Meses sin interés' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NGetText.Target>
@@ -189,7 +198,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <PickBranch sap:VirtualizedContainerService.HintSize="423.2,464.8" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                 <PickBranch.Trigger>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element -Selector IMG" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+                  <ui:WaitUiElementAppear ContinueOnError="{x:Null}" DisplayName="Find Element -Selector IMG" FoundElement="{x:Null}" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1" Result="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a5a19be7-1fa4-4d23-9499-533e8f4fedf6" InformativeScreenshot="9e5208adf32ac58f001d0202ea46bd0b" Selector="&lt;webctrl aria-role='img' tag='SPAN' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -202,7 +211,7 @@
                     </ui:WaitUiElementAppear.Target>
                   </ui:WaitUiElementAppear>
                 </PickBranch.Trigger>
-                <uix:NGetText DisplayName="Get Text - DiscountPrice" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="10e17aef-45fd-4efb-9cf3-2f0855160b26" TextString="[out_DiscountPrice]" Version="V3">
+                <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Text - DiscountPrice" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_4" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="10e17aef-45fd-4efb-9cf3-2f0855160b26" ScrapingOptions="{x:Null}" TextString="[out_DiscountPrice]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
                   <uix:NGetText.Target>
                     <uix:TargetAnchorable BrowserURL="https://articulo.mercadolibre.com.mx/MLM-3235474514-partsrun-pb250-coil-id-c-bota-aa-para-echo-es-250-pb250-_JM#position%3D6%26search_layout%3Dgrid%26type%3Ditem%26tracking_id%3D8df9c07e-e46e-4bf7-90f4-b91ebe6b304e" DesignTimeRectangle="1191, 557, 213, 67" DesignTimeScaleFactor="1.875" FullSelectorArgument="&lt;webctrl aria-role='img' tag='SPAN' class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact' parentid='price' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='img' tag='SPAN' class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact' parentid='price' type='' aaname='' /&gt;" Guid="1ed6f7a7-5a50-454c-a85a-2f3c0ac5056f" ImageBase64="" InformativeScreenshot="0e1c83dc8019ab892206909b10b2702b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Partsrun Pb250 Coil Id C + Bota Aa Para Echo Es-250 Pb250... | Meses sin interés' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                   </uix:NGetText.Target>
@@ -210,7 +219,7 @@
               </PickBranch>
               <PickBranch sap:VirtualizedContainerService.HintSize="423.2,464.8" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                 <PickBranch.Trigger>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Selector Price" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+                  <ui:WaitUiElementAppear ContinueOnError="{x:Null}" DisplayName="Find Element - Selector Price" FoundElement="{x:Null}" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2" Result="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2313a54a-2bc0-4d01-88c5-09f618a28f5e" InformativeScreenshot="514b18f4489f7f59ccbbcbc85d3b8840" Selector="&lt;html app='msedge.exe' title='2 Piezas Foco 9005 65w Halogeno Hella Original | Meses sin interés' /&gt;&lt;webctrl aaname='*' class='andes-money-amount__fraction' parentid='price' tag='SPAN' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -223,7 +232,7 @@
                     </ui:WaitUiElementAppear.Target>
                   </ui:WaitUiElementAppear>
                 </PickBranch.Trigger>
-                <uix:NGetText DisplayName="Get Text - DiscountPrice" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="10e17aef-45fd-4efb-9cf3-2f0855160b26" TextString="[out_DiscountPrice]" Version="V3">
+                <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Text - DiscountPrice" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_5" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="10e17aef-45fd-4efb-9cf3-2f0855160b26" ScrapingOptions="{x:Null}" TextString="[out_DiscountPrice]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
                   <uix:NGetText.Target>
                     <uix:TargetAnchorable BrowserURL="https://articulo.mercadolibre.com.mx/MLM-1720151025-2-piezas-foco-9005-65w-halogeno-hella-original-_JM#polycard_client=recommendations_home_navigation-trend-recommendations&amp;reco_backend=machinalis-homes-univb&amp;reco_client=home_navigation-trend-recommendations&amp;reco_item_pos=0&amp;reco_backend_type=function&amp;reco_id=deb14ac1-f32a-4a5f-b5e3-fecfa67ec061&amp;c_id=/home/navigation-trend-recommendations/element&amp;c_uid=6e5a4ea5-15aa-4ad3-a9ac-6f9717d31a44" DesignTimeRectangle="1187, 506, 118, 68" DesignTimeScaleFactor="1.875" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='299' class='andes-money-amount__fraction' parentid='price' tag='SPAN' parentclass='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact' /&gt;" FuzzySelectorArgument="&lt;webctrl class='andes-money-amount__fraction' parentid='price' tag='SPAN' parentclass='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact' type='' /&gt;" Guid="c6f8a2e7-3ca5-49f5-b18f-4893ead20de7" ImageBase64="" InformativeScreenshot="d798802aa65b26fa49d0a887b4d632a9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='2 Piezas Foco 9005 65w Halogeno Hella Original | Meses sin interés' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                   </uix:NGetText.Target>
