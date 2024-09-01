@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>842.4,1731.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1616,2927.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MonitoringPrices_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -122,7 +122,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MonitoringPrices" sap:VirtualizedContainerService.HintSize="605.6,1666.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MonitoringPrices" sap:VirtualizedContainerService.HintSize="1626.4,2862.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtURLs" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtNewInfo" />
@@ -138,22 +138,22 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - Reading URLs" sap:VirtualizedContainerService.HintSize="543.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Reading the URL's registered.&quot;]" />
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="This activity reads the URL sheet info from Monitoring.xlsx" DataTable="[dtURLs]" DisplayName="Read Range Workbook - URLs" sap:VirtualizedContainerService.HintSize="543.2,164" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="URL" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsm&quot;]">
+    <ui:LogMessage DisplayName="Log Message - Reading URLs" sap:VirtualizedContainerService.HintSize="1564,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Reading the URL's registered.&quot;]" />
+    <ui:ReadRange AddHeaders="True" sap2010:Annotation.AnnotationText="This activity reads the URL sheet info from Monitoring.xlsx" DataTable="[dtURLs]" DisplayName="Read Range Workbook - URLs" sap:VirtualizedContainerService.HintSize="1564,164" sap2010:WorkflowViewState.IdRef="ReadRange_1" Password="{x:Null}" Range="{x:Null}" SheetName="URL" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsm&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadRange>
-    <ui:BuildDataTable sap2010:Annotation.AnnotationText="This datatable will record the new information gather from web site." DataTable="[dtNewInfo]" DisplayName="Build Data Table - dtNewInfo" sap:VirtualizedContainerService.HintSize="543.2,136" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Original_x0020_Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price_x0020_with_x0020_Discount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Discount_x0020__x0025_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TransactionCode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+    <ui:BuildDataTable sap2010:Annotation.AnnotationText="This datatable will record the new information gather from web site." DataTable="[dtNewInfo]" DisplayName="Build Data Table - dtNewInfo" sap:VirtualizedContainerService.HintSize="1564,136" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Original_x0020_Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price_x0020_with_x0020_Discount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Discount_x0020__x0025_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TransactionCode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BuildDataTable>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TransactionCode - Invoke Workflow File (TransactionCode.xaml)" sap:VirtualizedContainerService.HintSize="543.2,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="TransactionCode.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TransactionCode - Invoke Workflow File (TransactionCode.xaml)" sap:VirtualizedContainerService.HintSize="1564,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" Level="{x:Null}" LogEntry="{x:Null}" LogExit="{x:Null}" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="TransactionCode.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_TransactionCode">[in_out_TransactionCode]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
@@ -164,13 +164,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtURLs]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="543.2,524" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtURLs]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1564,1720" sap2010:WorkflowViewState.IdRef="ForEachRow_1" MaxIterations="{x:Null}" Values="{x:Null}">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="509.6,326.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1530.4,1522.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="dynamicURL" />
             </Sequence.Variables>
@@ -180,7 +180,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign DisplayName="Multiple Assign - Clean up value for the variables that will handle info" sap:VirtualizedContainerService.HintSize="447.2,56.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign DisplayName="Multiple Assign - Clean up value for the variables that will handle info" sap:VirtualizedContainerService.HintSize="1468,84.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -189,7 +189,10 @@
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
                       <InArgument x:TypeArguments="x:String">
-                        <Literal x:TypeArguments="x:String" Value="" />
+                        <Literal x:TypeArguments="x:String">
+                          <Literal.Result>
+                            <OutArgument x:TypeArguments="x:String" />
+                          </Literal.Result></Literal>
                       </InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
@@ -199,7 +202,10 @@
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
                       <InArgument x:TypeArguments="x:String">
-                        <Literal x:TypeArguments="x:String" Value="" />
+                        <Literal x:TypeArguments="x:String">
+                          <Literal.Result>
+                            <OutArgument x:TypeArguments="x:String" />
+                          </Literal.Result></Literal>
                       </InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
@@ -209,7 +215,10 @@
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
                       <InArgument x:TypeArguments="x:String">
-                        <Literal x:TypeArguments="x:String" Value="" />
+                        <Literal x:TypeArguments="x:String">
+                          <Literal.Result>
+                            <OutArgument x:TypeArguments="x:String" />
+                          </Literal.Result></Literal>
                       </InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
@@ -219,7 +228,10 @@
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
                       <InArgument x:TypeArguments="x:String">
-                        <Literal x:TypeArguments="x:String" Value="" />
+                        <Literal x:TypeArguments="x:String">
+                          <Literal.Result>
+                            <OutArgument x:TypeArguments="x:String" />
+                          </Literal.Result></Literal>
                       </InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
@@ -232,7 +244,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
-            <Assign sap2010:Annotation.AnnotationText="This activity gets the URL of the processing row to a variable that is used in the next activity." DisplayName="Assign - Get URL string for each row" sap:VirtualizedContainerService.HintSize="447.2,132.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap2010:Annotation.AnnotationText="This activity gets the URL of the processing row to a variable that is used in the next activity." DisplayName="Assign - Get URL string for each row" sap:VirtualizedContainerService.HintSize="1468,160.8" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[dynamicURL]</OutArgument>
               </Assign.To>
@@ -247,20 +259,20 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Mercado Libre México - Envíos Gratis en el día" sap:VirtualizedContainerService.HintSize="447.2,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="2a486409-048d-4497-bd84-6302299b801e" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Use Browser Edge: Mercado Libre México - Envíos Gratis en el día" sap:VirtualizedContainerService.HintSize="1468,1188" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="2a486409-048d-4497-bd84-6302299b801e" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1434.4,920" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1434.4,948" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGetText DisplayName="Get Text - Title" sap:VirtualizedContainerService.HintSize="1372,56.8" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="2a486409-048d-4497-bd84-6302299b801e" TextString="[sTitle]" Version="V3">
+                    <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Text - Title" sap:VirtualizedContainerService.HintSize="1372,84.8" sap2010:WorkflowViewState.IdRef="NGetText_1" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="2a486409-048d-4497-bd84-6302299b801e" ScrapingOptions="{x:Null}" TextString="[sTitle]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://articulo.mercadolibre.com.mx/MLM-3235474514-partsrun-pb250-coil-id-c-bota-aa-para-echo-es-250-pb250-_JM#position%3D6%26search_layout%3Dgrid%26type%3Ditem%26tracking_id%3D8df9c07e-e46e-4bf7-90f4-b91ebe6b304e" DesignTimeRectangle="1193, 529, 546, 146" DesignTimeScaleFactor="1.875" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='ui-pdp-title' /&gt;" Guid="a7596aa8-c2d2-4bcc-9f46-8b43312cc66e" ImageBase64="" InformativeScreenshot="a983b194d0775b3cb29c1db133cca6ac.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Partsrun Pb250 Coil Id C + Bota Aa Para Echo Es-250 Pb250... | Meses sin interés' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                       </uix:NGetText.Target>
@@ -280,7 +292,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <PickBranch sap:VirtualizedContainerService.HintSize="424,481.6" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                         <PickBranch.Trigger>
-                          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Price selector" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+                          <ui:WaitUiElementAppear ContinueOnError="{x:Null}" DisplayName="Find Element - Price selector" FoundElement="{x:Null}" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1" Result="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}">
                             <ui:WaitUiElementAppear.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dad1e0cc-2ee8-4b8b-9312-2a570ffe06d7" InformativeScreenshot="870b947c89c8abfa1cc37ad26eb9f2d0" Selector="&lt;webctrl class='andes-money-amount__discount' parentid='price' tag='SPAN' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -293,20 +305,20 @@
                             </ui:WaitUiElementAppear.Target>
                           </ui:WaitUiElementAppear>
                         </PickBranch.Trigger>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetText1 - Invoke Workflow File (GetText1.xaml)" sap:VirtualizedContainerService.HintSize="334.4,174.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="GetText1.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetText1 - Invoke Workflow File (GetText1.xaml)" sap:VirtualizedContainerService.HintSize="334.4,174.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="GetText1.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <OutArgument x:TypeArguments="x:String" x:Key="out_DiscountPercentage">[sDiscountPercentage]</OutArgument>
                             <OutArgument x:TypeArguments="x:String" x:Key="out_DiscountPrice">[sDiscountPrice]</OutArgument>
                             <OutArgument x:TypeArguments="x:String" x:Key="out_OriginalPrice">[sOriginalPrice]</OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_dynamicURL" />
+                            <InArgument x:TypeArguments="x:String" x:Key="in_dynamicURL">[dynamicURL]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </PickBranch>
                       <PickBranch sap:VirtualizedContainerService.HintSize="427.2,481.6" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                         <PickBranch.Trigger>
-                          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Main container selector" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+                          <ui:WaitUiElementAppear ContinueOnError="{x:Null}" DisplayName="Find Element - Main container selector" FoundElement="{x:Null}" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2" Result="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}">
                             <ui:WaitUiElementAppear.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b0aa299d-29a5-4340-a871-44281aa3d41b" InformativeScreenshot="a390a36d573c04d8c3f073cc6e983251" Selector="&lt;html app='msedge.exe' title='*' /&gt;&lt;webctrl class='andes-money-amount__discount' parentid='ui-pdp-main-container' tag='SPAN' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b0aa299d-29a5-4340-a871-44281aa3d41b" InformativeScreenshot="b61fde056c5b1abadc3b8ccfe5f4e7af" Selector="&lt;webctrl class='andes-money-amount__discount' parentid='ui-pdp-main-container' tag='SPAN' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -317,12 +329,12 @@
                             </ui:WaitUiElementAppear.Target>
                           </ui:WaitUiElementAppear>
                         </PickBranch.Trigger>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetText2 - Invoke Workflow File (GetText2.xaml)" sap:VirtualizedContainerService.HintSize="337.6,174.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="GetText2.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetText2 - Invoke Workflow File (GetText2.xaml)" sap:VirtualizedContainerService.HintSize="337.6,174.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="GetText2.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <OutArgument x:TypeArguments="x:String" x:Key="out_DiscountPercentage">[sDiscountPercentage]</OutArgument>
                             <OutArgument x:TypeArguments="x:String" x:Key="out_DiscountPrice">[sDiscountPrice]</OutArgument>
                             <OutArgument x:TypeArguments="x:String" x:Key="out_OriginalPrice">[sOriginalPrice]</OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_dynamicURL" />
+                            <InArgument x:TypeArguments="x:String" x:Key="in_dynamicURL">[dynamicURL]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </PickBranch>
@@ -330,17 +342,17 @@
                         <PickBranch.Trigger>
                           <Delay Duration="00:00:07" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
                         </PickBranch.Trigger>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetText3 - Invoke Workflow File (GetText3.xaml)" sap:VirtualizedContainerService.HintSize="337.6,174.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="GetText3.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetText3 - Invoke Workflow File (GetText3.xaml)" sap:VirtualizedContainerService.HintSize="337.6,174.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="GetText3.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <OutArgument x:TypeArguments="x:String" x:Key="out_DiscountPercentage">[sDiscountPercentage]</OutArgument>
                             <OutArgument x:TypeArguments="x:String" x:Key="out_DiscountPrice">[sDiscountPrice]</OutArgument>
                             <OutArgument x:TypeArguments="x:String" x:Key="out_OriginalPrice">[sOriginalPrice]</OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_dynamicURL" />
+                            <InArgument x:TypeArguments="x:String" x:Key="in_dynamicURL">[dynamicURL]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </PickBranch>
                     </Pick>
-                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(0).ToString, sTitle, sOriginalPrice, sDiscountPrice, sDiscountPercentage, Now.ToString, in_out_TransactionCode}]" DataTable="[dtNewInfo]" DisplayName="Add Data Row - to new info" sap:VirtualizedContainerService.HintSize="1372,212.8" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                    <ui:AddDataRow ArrayRow="[{CurrentRow(0).ToString, sTitle, sOriginalPrice, sDiscountPrice, sDiscountPercentage, Now.ToString, in_out_TransactionCode}]" DataRow="{x:Null}" DataTable="[dtNewInfo]" DisplayName="Add Data Row - to new info" sap:VirtualizedContainerService.HintSize="1372,212.8" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -356,7 +368,7 @@
               </uix:NApplicationCard.TargetApp>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -371,7 +383,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtData]" DisplayName="Read Range Workbook - Data spreadsheet" sap:VirtualizedContainerService.HintSize="543.2,120" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Data" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsm&quot;]" />
+    <ui:ReadRange AddHeaders="True" DataTable="[dtData]" DisplayName="Read Range Workbook - Data spreadsheet" sap:VirtualizedContainerService.HintSize="1564,120" sap2010:WorkflowViewState.IdRef="ReadRange_2" Password="{x:Null}" Range="{x:Null}" SheetName="Data" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsm&quot;]" />
     <Assign DisplayName="Assign - newRow" sap:VirtualizedContainerService.HintSize="543.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[newRow]</OutArgument>
@@ -380,6 +392,6 @@
         <InArgument x:TypeArguments="x:Int32">[dtData.Rows.Cast(Of DataRow).ToList().FindLastIndex(Function(row) row.ItemArray.Any(Function(cell) Not String.IsNullOrEmpty(cell.ToString()))) + 3]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:WriteRange AddHeaders="False" DataTable="[dtNewInfo]" DisplayName="Write Range Workbook - write info in spreadsheet" sap:VirtualizedContainerService.HintSize="543.2,139.2" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Data" StartingCell="[&quot;A&quot;&amp; newRow]" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsm&quot;]" />
+    <ui:WriteRange AddHeaders="False" DataTable="[dtNewInfo]" DisplayName="Write Range Workbook - write info in spreadsheet" sap:VirtualizedContainerService.HintSize="543.2,139.2" sap2010:WorkflowViewState.IdRef="WriteRange_1" Password="{x:Null}" SheetName="Data" StartingCell="[&quot;A&quot;&amp; newRow]" WorkbookPath="[DataFolderPath + &quot;Monitoring.xlsm&quot;]" />
   </Sequence>
 </Activity>
